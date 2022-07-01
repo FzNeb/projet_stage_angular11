@@ -1,0 +1,85 @@
+<div class="container" *ngIf="productFormGroup">
+  <form [formGroup]="productFormGroup">
+    <div class="form-group">
+      
+
+        <div class="badge badge-success text-wrap" style="width: 20rem;">
+           <h4>Passage 1 </h4> 
+          </div>
+  <br>
+  <br>
+
+
+
+  <label>Periode</label>
+  <form class="row row-cols-sm-auto">
+      <div class="col-12">
+        <div class="input-group">
+          <input class="form-control" placeholder="dd-mm-yyyy"
+                 name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" [disabled]="isShown">
+          <button class="btn btn-outline-secondary fa fa-calendar " (click)="d.toggle()" type="button" [disabled]="isShown"></button>
+        </div>
+      </div>
+    </form>
+    
+    <hr/>
+  
+
+    </div>
+    <!-- <div class="form-group">
+      <label>Price</label>
+      <input type="text" class="form-control" formControlName="price">
+    </div>
+    <div class="form-group">
+      <label>Quantity</label>
+      <input type="text" class="form-control" formControlName="quantity">
+    </div>
+    <div class="form-group">
+      <label>Selected</label>
+      <input type="checkbox" formControlName="selected" class="form-check">
+    </div>
+    <div class="form-group">
+      <label>Available</label>
+      <input type="checkbox" formControlName="available" class="form-check">
+    </div> -->
+    <div class="form-group">
+        
+        <div *ngIf="isShown" class="row container-fluid"  id="divshow" >
+            <p align="left"> Loading... </p>
+            </div>
+
+        <p align="right">
+           <button class="btn btn-success"  (click)="onRunIpc()"  style="width: 10rem;" [disabled]="isShown" > Run </button>
+    
+    <br>
+    <br>
+    <button class="btn btn-success" (click)="openXl(content)" style="width: 10rem;"   [disabled]="isShown" > Edition Etats </button>
+    </p>
+    </div>
+  
+  </form>
+</div>
+
+<!-- <a href="assets/IPC_ANAL_RECAP.pdf" target="_blank"> Read More </a> -->
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">IPC Etats</h4>
+    <button type="button" class="fa fa-window-close" aria-hidden="true" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+   
+  </div>
+  <div class="modal-body">
+    <form>
+   
+      <div >
+        <embed src="assets/IPC_ANAL_RECAP.pdf" frameborder="0" width="100%" height="400px">
+   
+    </div>
+    </form>
+
+  </div>
+<!--   <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div> -->
+</ng-template>
+

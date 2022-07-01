@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  
+
+        <ul class="navbar navbar-nav">
+      
+                <li>
+                  
+                    <button (click)="onGetAllServicesAnalytique()" class="btn btn-sm btn-outline-info ml-2">All</button>
+                </li>
+                <li>
+                  <button (click)="onGetAllServicesAnalytique()"    class="btn btn-sm btn-outline-info ml-2">New</button>
+                </li>
+               
+      
+      </ul>
+      
+      </nav>
+      
+      
+      <div class="container">
+        <ng-container *ngIf="(servicesAnalytiques$ | async) as result" [ngSwitch]="result.dataState" >
+          <ng-container *ngSwitchCase="DataStateEnum.LOADING">
+            Loading .....
+          </ng-container>
+          <ng-container *ngSwitchCase="DataStateEnum.ERROR">
+            <div class="alert-danger">
+              {{result.errorMessage}}
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="DataStateEnum.LOADED">
+            
+            <table class="table">
+            
+              <tr>
+                <th>ID</th><th>Structure</th><th>Region</th><th>Service</th><th>CompteAnalytique</th>
+              </tr>
+              <tr *ngFor="let p of result.data">
+                <td>{{p.id}}</td>
+                <td>{{p.anal_str}}</td>
+                <td>{{p.anal_region}}</td>
+                <td>{{p.anal_service}}</td>
+                <td>{{p.anal_anal}}</td>
+               
+                <td>
+                  <button class="btn btn-danger" (click)="onGetAllServicesAnalytique()">
+                    <span class="fa fa-trash-o"></span>
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-danger" (click)="onEdit(p)">
+                    <span class="fa fa-edit"></span>
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </ng-container>
+        </ng-container>
+      </div>
+      
+      
+      

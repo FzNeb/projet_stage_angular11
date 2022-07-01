@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Computer",
+      "price": 4300,
+      "quantity": "99999",
+      "selected": true,
+      "available": true
+    },
+    {
+      "name": "p",
+      "price": "90",
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "azerty",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true
+    }
+  ],
+  "structures": [
+    {
+      "str_id": 1,
+      "str_code": "A00",
+      "str_designation": "Direction Générale"
+    },
+    {
+      "str_id": 2,
+      "str_code": "A01",
+      "str_designation": "Direction Informatique"
+    },
+    {
+      "str_id": 3,
+      "str_code": "A02",
+      "str_designation": "Direction Finance"
+    }
+  ],
+  "servicesAnalytiques": [
+    {
+      "id": 1,
+      "anal_str": 1,
+      "anal_region": "A",
+      "anal_service": "A0011",
+      "anal_anal": "100000"
+    },
+    {
+      "id": 2,
+      "anal_str": 1,
+      "anal_region": "B",
+      "anal_service": "B0012",
+      "anal_anal": "200000"
+    },
+    {
+      "id": 3,
+      "anal_str": 2,
+      "anal_region": "C",
+      "anal_service": "C0013",
+      "anal_anal": "300000"
+    }
+  ]
+}

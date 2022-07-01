@@ -1,0 +1,38 @@
+<br>
+<br>
+<div class="text-center">
+    <h4> Tables Structures </h4> 
+  </div>
+
+  
+
+<br>
+
+<div class="container">
+
+        <ng-container *ngIf="(structures$ | async) as result" [ngSwitch]="result.dataState" >
+                <ng-container *ngSwitchCase="DataStateEnum.LOADING">
+                  Loading .....
+                </ng-container>
+                <ng-container *ngSwitchCase="DataStateEnum.ERROR">
+                  <div class="alert-danger">
+                    {{result.errorMessage}}
+                  </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="DataStateEnum.LOADED">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                  <th>Str_Code</th><th>Str_Name</th><th>Str_Designation</th>
+                </tr>
+                </thead>
+                <tr *ngFor="let s of result.data">
+                  <td>{{s.str_id}}</td>
+                  <td>{{s.str_code}}</td>
+                  <td>{{s.str_designation}}</td>
+                </tr>
+              </table>
+              </ng-container>
+              </ng-container>
+       
+</div>

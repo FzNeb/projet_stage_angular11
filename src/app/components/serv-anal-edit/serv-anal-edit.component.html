@@ -1,0 +1,36 @@
+
+<br>
+<div class="text-center">
+    <h4> Tables Services/Comptes Analytiques </h4> 
+  </div>
+
+ 
+
+<div class="container" *ngIf="analServFormGroup">
+        <form [formGroup]="analServFormGroup">
+          <div class="form-group">
+            <label>ANAL_ID</label>
+            <input type="text" class="form-control" formControlName="id">
+          </div>
+      
+          <div class="form-group">
+            <label>ANAL_STR</label>
+            <input type="text" class="form-control" formControlName="anal_str">
+                   
+          </div>
+          <div class="form-group">
+            <label>ANAL_REGION</label>
+            <input type="text" class="form-control" formControlName="anal_region">
+          </div>
+          <div class="form-group">
+            <label>ANAL_SERVICE</label>
+            <input type="text" class="form-control" formControlName="anal_service">
+          </div>
+          <div class="form-group">
+              <label>COMPTE_ANAL</label>
+              <input type="text" class="form-control" formControlName="anal_anal">
+            </div>
+            <button class="btn btn-success" (click)=" onUpdateServiceAnalytique()">Save</button>
+        </form>
+      </div>
+      
